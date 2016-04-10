@@ -13,19 +13,36 @@ def say_hello():
 
 # 2. Write a function that takes a name as a string and
 #    prints "Hi" followed by the name.
+def greet_by_name(name):
+    """Print a greeting to the variable name passed in"""
+    print "Hi " + name
 
 
 # 3. Write a function that takes two integers and multiplies
 #    them together. Print the result.
+def multiply_nums(num1, num2):
+    """multiply the 2 nums passed in and print the result"""
+    print num1 * num2
 
 
 # 4. Write a function that takes a string and an integer and
 #    prints the string that many times
+def repeat_string(words, num):
+    """Print the string passed in the number of times num passed in specifies"""
+    print words * num
 
 
 # 5. Write a function that takes an integer and prints "Higher
 #    than 0" if higher than zero and "Lower than 0" if lower
 #    than zero. If integer is 0 print "Zero".
+def check_high_low(num):
+    """Check the number passed in to see if it is 0, or higher or lower than 0"""
+    if num == 0:
+        print "Zero"
+    elif num > 0:
+        print "Higher than 0"
+    else:
+        print "Lower than 0"
 
 
 # 6. Write a function that takes an integer and returns a
@@ -84,3 +101,9 @@ def say_hello():
 #    need to return anything.
 
 say_hello()
+greet_by_name(name="Bonnie")
+multiply_nums(num1=3, num2=9)
+repeat_string("Good day, Sir!", 4)
+check_high_low(0)
+check_high_low(-4)
+check_high_low(5)
