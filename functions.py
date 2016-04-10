@@ -162,40 +162,79 @@ def calculate_tax(state,item_price,tax=.05):
 #	 Take a name and a job title as parameters, making it so the
 # 	 job title defaults to "Engineer" if a job title is not passed in.
 #	 Return the person's title and name.
-def print_name_and_job(name,job_title="Engineer"):
-    """Print the passed in name and job title. Use the default value of job_title if not passed in. Return nothing"""
-    print job_title + " " + name
+def format_name_and_job(name,job_title="Engineer"):
+    """Print the passed in name and job title. Use the default value of job_title if not passed in. Return a string"""
+    
+    #print out the job_title followed by a space, then the name
+    title_and_name = job_title + " " + name
+    return title_and_name
 
 # 3. Given a receiver's name, receiver's job title, and sender's name, print the following letter:      
 #       Dear JOB_TITLE RECEIVER_NAME, I think you are amazing! Sincerely,
 #       SENDER_NAME. 
 #    Use the function from #2 to construct the full title for the letter's greeting.
+def print_letter(receiver_name, job_title, sender_name):
+    """Print out a letter using the passed in information. Return nothing."""
+
+    #first, use the format_name_and_job function to format job_title and name into a string
+    title_and_name = format_name_and_job(receiver_name, job_title)
+
+    #print the letter to screen
+    print "Dear {}, I think you are amazing! Sincerely,".format(title_and_name)
+    print sender_name
+
 
 # 4. Turn the block of code from the directions into a function. This
 #    function will take a number and append it to *numbers*. It doesn't
 #    need to return anything.
+def append_num_to_list(num):
+    """will append a number to an existing list of numbers. Returns nothing"""
+
+    #the original numbers list
+    numbers = [1, 2]
+
+    #append the passed in number
+    numbers.append(num)
+
+    #print the number list to screen
+    print numbers
 
 #test functions
-say_hello()
-greet_by_name(name="Bonnie")
-multiply_nums(num1=3, num2=9)
-repeat_string(input_string="Good day, Sir!", num=4)
-check_high_low(num=0)
-check_high_low(num=-4)
-check_high_low(num=5)
-print is_divisible_by_3(num=27)
-print is_divisible_by_3(num=4)
-print find_num_spaces(input_string="The rain in Spain falls mainly on the plains")
-print find_num_spaces(input_string="Cumberbatch")
-print calculate_tip(bill_amt=75.50)
-print calculate_tip(bill_amt=125.70, tip=.20)
-print calculate_tip(bill_amt=98, tip=.18)
+# say_hello()
+# greet_by_name(name="Bonnie")
+# multiply_nums(num1=3, num2=9)
+# repeat_string(input_string="Good day, Sir!", num=4)
+# check_high_low(num=0)
+# check_high_low(num=-4)
+# check_high_low(num=5)
+# print is_divisible_by_3(num=27)
+# print is_divisible_by_3(num=4)
+# print find_num_spaces(input_string="The rain in Spain falls mainly on the plains")
+# print find_num_spaces(input_string="Cumberbatch")
+# print calculate_tip(bill_amt=75.50)
+# print calculate_tip(bill_amt=125.70, tip=.20)
+# print calculate_tip(bill_amt=98, tip=.18)
+
+print "Output from find_num_properties function:"
 sign, parity = find_num_properties(num=5)
 print sign + " " + parity
 sign, parity = find_num_properties(num=-2)
 print sign + " " + parity
+
+print "\nOutput from Part 2, question 1:"
 print calculate_tax(state="CA", item_price=100.00)
 print calculate_tax(state="DE", item_price=50, tax=0)
 print calculate_tax(state="MD", item_price=50.50)
-print_name_and_job(name="Veronica", job_title="Cheerleader")
-print_name_and_job(name="Betty")
+
+print "\nOutput from Part 2, question 2:"
+print format_name_and_job(name="Veronica", job_title="Cheerleader")
+print format_name_and_job(name="Betty")
+
+print "\nOutput from Part 2, question 3:"
+print_letter(receiver_name="Lucy", job_title="Factory Worker", sender_name="Ethel")
+print ""
+print_letter(receiver_name="Bonnie", job_title="Hackbright Instructor", sender_name="Colleen")
+
+print "\nOutput from Part2, question 4:"
+append_num_to_list(12)
+append_num_to_list(48)
