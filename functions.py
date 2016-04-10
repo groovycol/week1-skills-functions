@@ -27,9 +27,9 @@ def multiply_nums(num1, num2):
 
 # 4. Write a function that takes a string and an integer and
 #    prints the string that many times
-def repeat_string(words, num):
+def repeat_string(input_string, num):
     """Print the string passed in the number of times num passed in specifies"""
-    print words * num
+    print input_string * num
 
 
 # 5. Write a function that takes an integer and prints "Higher
@@ -48,11 +48,24 @@ def check_high_low(num):
 # 6. Write a function that takes an integer and returns a
 #    boolean (True or False), depending on whether the number
 #    is evenly divisible by 3.
+def is_divisible_by_3(num):
+    """takes the int passed in and checks to see if it is divisible by 3 using modulo"""
+    remainder = num % 3
+    if remainder == 0:
+        return True
+    else:
+        return False
 
 
 # 7. Write a function that takes a sentence as one string and
 #    returns the number of spaces.
-
+def find_num_spaces(input_string):
+    """Return the number of spaces in the input_string passed in"""
+    spaces_count = 0
+    for character in input_string:
+        if character == " ":
+            spaces_count += 1
+    return spaces_count
 
 # 8. Write a function that can be passed a meal price and a
 #    tip percentage. It should return the total amount paid
@@ -103,7 +116,10 @@ def check_high_low(num):
 say_hello()
 greet_by_name(name="Bonnie")
 multiply_nums(num1=3, num2=9)
-repeat_string("Good day, Sir!", 4)
-check_high_low(0)
-check_high_low(-4)
-check_high_low(5)
+repeat_string(input_string="Good day, Sir!", num=4)
+check_high_low(num=0)
+check_high_low(num=-4)
+check_high_low(num=5)
+print is_divisible_by_3(num=27)
+print is_divisible_by_3(num=4)
+print find_num_spaces(input_string="The rain in Spain falls mainly on the plains")
