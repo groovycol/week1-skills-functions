@@ -215,26 +215,26 @@ def append_num_to_list(num):
 # print calculate_tip(bill_amt=125.70, tip=.20)
 # print calculate_tip(bill_amt=98, tip=.18)
 
-print "Output from find_num_properties function:"
+print "Calling find_num_properties function with 5 as a parameter"
 sign, parity = find_num_properties(num=5)
 print sign + " " + parity
+print "Calling find_num_properties function with -2 as a parameter"
 sign, parity = find_num_properties(num=-2)
 print sign + " " + parity
 
-print "\nOutput from Part 2, question 1:"
+print "\nPart 2, question 1:"
 print calculate_tax(state="CA", item_price=100.00)
 print calculate_tax(state="DE", item_price=50, tax=0)
 print calculate_tax(state="MD", item_price=50.50)
 
-print "\nOutput from Part 2, question 2:"
+print "\nPart 2, question 2:"
 print format_name_and_job(name="Veronica", job_title="Cheerleader")
 print format_name_and_job(name="Betty")
 
-print "\nOutput from Part 2, question 3:"
+print "\nPart 2, question 3:"
 print_letter(receiver_name="Lucy", job_title="Factory Worker", sender_name="Ethel")
-print ""
 print_letter(receiver_name="Bonnie", job_title="Hackbright Instructor", sender_name="Colleen")
 
-print "\nOutput from Part2, question 4:"
-append_num_to_list(12)
-append_num_to_list(48)
+print "\nPart2, question 4:"
+append_num_to_list(num=12)
+append_num_to_list(num=48)
