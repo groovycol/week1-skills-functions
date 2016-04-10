@@ -72,12 +72,26 @@ def find_num_spaces(input_string):
 #    (price + price * tip). **However:** passing in the tip
 #    percentage should be optional; if not given, it should
 #    default to 15%.
-
+def calculate_tip(bill_amt, tip=.15):
+    """Return the total amt paid for a bill_amt passed in. Passing in a tip amt is optional, default is .15"""
+    return bill_amt + (bill_amt * tip)
 
 # 9. Write a function that takes an integer as an argument and
 #    returns two pieces of information as strings ---
 #    "Positive" or "Negative" and "Even" or "Odd". The two strings
 #	 should be returned in a list.
+def find_num_properties(num):
+    """For the int passed in, return a list of its properties(Even or Odd) and (Positive or Negative)"""
+    property_list = []
+    if num > 0:
+        property_list.append("Positive")
+    else:
+        property_list.append("Negative")
+    if num % 2 == 0:
+        property_list.append("Even")
+    else:
+        property_list.append("Odd")
+    return property_list
 #
 # 	Then, write code that shows the calling of this function
 # 	on a number and unpack what is returned into two
@@ -113,6 +127,7 @@ def find_num_spaces(input_string):
 #    function will take a number and append it to *numbers*. It doesn't
 #    need to return anything.
 
+#test functions
 say_hello()
 greet_by_name(name="Bonnie")
 multiply_nums(num1=3, num2=9)
@@ -123,3 +138,12 @@ check_high_low(num=5)
 print is_divisible_by_3(num=27)
 print is_divisible_by_3(num=4)
 print find_num_spaces(input_string="The rain in Spain falls mainly on the plains")
+print find_num_spaces(input_string="Cumberbatch")
+print calculate_tip(bill_amt=75.50)
+print calculate_tip(bill_amt=125.70, tip=.20)
+sign, parity = find_num_properties(num=5)
+print sign
+print parity
+sign, parity = find_num_properties(num=-2)
+print sign
+print parity
