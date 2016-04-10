@@ -100,7 +100,7 @@ def calculate_tip(bill_amt, tip=.15):
     
     #return the result of the bill_amt plus the calculated tip amount. 
     #the parens are optional, but I added for clarity
-    return bill_amt + (bill_amt * tip)
+    return float(bill_amt) + (float(bill_amt) * tip)
 
 # 9. Write a function that takes an integer as an argument and
 #    returns two pieces of information as strings ---
@@ -147,10 +147,24 @@ def find_num_properties(num):
 #    If the state is California, apply a 7% tax within the function.
 #    Your function should return the total cost of the item including tax.
 
+def calculate_tax(state,item_price,tax=.05):
+    """Return the total cost of an item with tax. If state is CA, override the tax default amount"""
+
+    #check the state, if it's California, change the default value of tax
+    if state == "CA":
+        tax=.07
+    #return the total price which is calculated as item price + item_price * tax
+    #parens aren't necessary, but used for clarity
+    return float(item_price) + (float(item_price) * tax)
+
+
 # 2. Turn the block of code from the directions into a function.
 #	 Take a name and a job title as parameters, making it so the
 # 	 job title defaults to "Engineer" if a job title is not passed in.
 #	 Return the person's title and name.
+def print_name_and_job(name,job_title="Engineer"):
+    """Print the passed in name and job title. Use the default value of job_title if not passed in. Return nothing"""
+    print job_title + " " + name
 
 # 3. Given a receiver's name, receiver's job title, and sender's name, print the following letter:      
 #       Dear JOB_TITLE RECEIVER_NAME, I think you are amazing! Sincerely,
@@ -175,7 +189,13 @@ print find_num_spaces(input_string="The rain in Spain falls mainly on the plains
 print find_num_spaces(input_string="Cumberbatch")
 print calculate_tip(bill_amt=75.50)
 print calculate_tip(bill_amt=125.70, tip=.20)
+print calculate_tip(bill_amt=98, tip=.18)
 sign, parity = find_num_properties(num=5)
 print sign + " " + parity
 sign, parity = find_num_properties(num=-2)
 print sign + " " + parity
+print calculate_tax(state="CA", item_price=100.00)
+print calculate_tax(state="DE", item_price=50, tax=0)
+print calculate_tax(state="MD", item_price=50.50)
+print_name_and_job(name="Veronica", job_title="Cheerleader")
+print_name_and_job(name="Betty")
