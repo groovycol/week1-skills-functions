@@ -8,27 +8,35 @@
 #    prints "Hello World".
 def say_hello():
     """Print a message to the screen, return nothing"""
+    
+    #print to screen a hard-coded message
     print "Hello World."
 
 
 # 2. Write a function that takes a name as a string and
 #    prints "Hi" followed by the name.
 def greet_by_name(name):
-    """Print a greeting to the variable name passed in"""
+    """Print a greeting to the variable name passed in. Returns nothing"""
+    
+    #print a message to the screen that contains the string passed in
     print "Hi " + name
 
 
 # 3. Write a function that takes two integers and multiplies
 #    them together. Print the result.
 def multiply_nums(num1, num2):
-    """multiply the 2 nums passed in and print the result"""
+    """multiply the 2 nums passed in and print the result. Return nothing."""
+    
+    #print the result of the 2 numbers passed in multiplied
     print num1 * num2
 
 
 # 4. Write a function that takes a string and an integer and
 #    prints the string that many times
 def repeat_string(input_string, num):
-    """Print the string passed in the number of times num passed in specifies"""
+    """Print the string passed in the number of times num passed in specifies. Return nothing"""
+    
+    #Repeat a print to screen of the string passed in the num of times passed in.
     print input_string * num
 
 
@@ -36,11 +44,15 @@ def repeat_string(input_string, num):
 #    than 0" if higher than zero and "Lower than 0" if lower
 #    than zero. If integer is 0 print "Zero".
 def check_high_low(num):
-    """Check the number passed in to see if it is 0, or higher or lower than 0"""
+    """Check the number passed in to see if it is 0, or higher or lower than 0. Return nothing"""
+    
+    #if the int passed in is equal to 0, print Zero to the screen
     if num == 0:
         print "Zero"
+    #if the int passed in is greater than 0, print Higher to the screen
     elif num > 0:
         print "Higher than 0"
+    #And in all other cases, the int must be less than zero, print Lower to the screen
     else:
         print "Lower than 0"
 
@@ -49,10 +61,15 @@ def check_high_low(num):
 #    boolean (True or False), depending on whether the number
 #    is evenly divisible by 3.
 def is_divisible_by_3(num):
-    """takes the int passed in and checks to see if it is divisible by 3 using modulo"""
+    """takes the int passed in and checks to see if it is divisible by 3 using modulo. Return a boolean value"""
+    
+    #store the result of using modulo (%) 3 on the int passed in
     remainder = num % 3
+    
+    #if the result is equal to zero, the int passed in is evenly divisible by 3. return True
     if remainder == 0:
         return True
+    #in all other cases, the result is not evenly divisible by three, so return False
     else:
         return False
 
@@ -61,10 +78,16 @@ def is_divisible_by_3(num):
 #    returns the number of spaces.
 def find_num_spaces(input_string):
     """Return the number of spaces in the input_string passed in"""
+    
+    #start with a count of 0
     spaces_count = 0
+    
+    #iterate through the characters in the string, and increment the count if the char is a space
     for character in input_string:
         if character == " ":
             spaces_count += 1
+    
+    #return the total count of spaces
     return spaces_count
 
 # 8. Write a function that can be passed a meal price and a
@@ -74,6 +97,9 @@ def find_num_spaces(input_string):
 #    default to 15%.
 def calculate_tip(bill_amt, tip=.15):
     """Return the total amt paid for a bill_amt passed in. Passing in a tip amt is optional, default is .15"""
+    
+    #return the result of the bill_amt plus the calculated tip amount. 
+    #the parens are optional, but I added for clarity
     return bill_amt + (bill_amt * tip)
 
 # 9. Write a function that takes an integer as an argument and
@@ -82,15 +108,23 @@ def calculate_tip(bill_amt, tip=.15):
 #	 should be returned in a list.
 def find_num_properties(num):
     """For the int passed in, return a list of its properties(Even or Odd) and (Positive or Negative)"""
+    
+    #create an empty list to store properties
     property_list = []
+    
+    #if the number passed in is greater than 0, its sign is positive, else negative
     if num > 0:
         property_list.append("Positive")
     else:
         property_list.append("Negative")
+
+    #if the number passed in can be evenly divided by 2, its parity is even, else odd
     if num % 2 == 0:
         property_list.append("Even")
     else:
         property_list.append("Odd")
+
+    #return the list containing sign and parity
     return property_list
 #
 # 	Then, write code that shows the calling of this function
@@ -142,8 +176,6 @@ print find_num_spaces(input_string="Cumberbatch")
 print calculate_tip(bill_amt=75.50)
 print calculate_tip(bill_amt=125.70, tip=.20)
 sign, parity = find_num_properties(num=5)
-print sign
-print parity
+print sign + " " + parity
 sign, parity = find_num_properties(num=-2)
-print sign
-print parity
+print sign + " " + parity
